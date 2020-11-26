@@ -1,0 +1,61 @@
+h1{
+    font-family: Garamond, sans-serif;
+    color: black;
+    text-align: left;
+    font-size: 2.0em;
+}
+
+body {
+    background-color: ivory;
+}
+
+button {
+    font-size: larger;
+    padding: 3px;
+    width: 80px;
+}
+
+input {
+	text-align: right;
+}
+
+button:hover {
+    color: white;
+}
+
+button.memory {
+    background-color: light-gray;
+}
+
+button.number {
+    background-color: white;
+}
+
+button.operation {
+    background-color: light-gray;
+}
+
+button.equals {
+    background-color: #091fee;
+}
+
+button.memory:hover {
+    background-color: #3e3e3e;
+}
+
+button.number:hover {
+    background-color: #3e3e3e;
+}
+
+button.operation:hover {
+    background-color: #3e3e3e;
+}
+
+button.equals:hover {
+    background-color: #3e3e3e;
+}
+
+table{
+    background-color: #43444d;
+    border-radius: 15px;
+}
