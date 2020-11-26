@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapa del KML</title>
+    <link rel="stylesheet" href="MapaKML.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6j4mF6blrc4kZ54S6vYZ2_FpMY9VzyRU"></script>
+    <script src="MapaKML.js"></script>
+	<meta name = "application_name" content = "Ejercicio13">
+	<meta name = "author" content = "Francisco Fernandez-UO269509 ">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+    <h1>Seleccione un archivo KML</h1>
+    <p><input id="subirArchivos" type="file" name="Archivos" onchange="miMapa.calcularTamañoArchivos();"></p>
+    <div id="mapa"></div>
+    <footer>
+	    <a href="http://validator.w3.org/check/referer">
+		    <img src="https://www.w3.org/Icons/valid-html40" alt="¡HTML5 válido!" height="31" width="88" /></a>
+	    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+		    <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="¡CSS Válido!" /></a>
+	</footer>
+</body>
+</html>
