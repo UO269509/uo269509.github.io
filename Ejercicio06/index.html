@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora del Consumo del agua</title>
+    <link rel="stylesheet" href="CalculadoraAgua.css">
+    <script src="CalculadoraAgua.js"></script>
+	<meta name = "application_name" content = "CalculadoraAgua">
+	<meta name = "author" content = "Francisco Fernandez-UO269509 ">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+    <h1>Calculadora del Consumo del Agua</h1>
+	<p>Introduzca su gasto promedio de litros al día</p>
+	<input type="text" value="0" id="litros" />
+	<p>Introduzca el número de individuos en la vivienda</p>
+	<input type="text" value="0" id="individuos" />
+	<p>Introduzca el porcentaje de pérdida</p>
+	<input type="text" value="0" id="porcentaje" />
+	<p></p>
+	<button class="button" onclick="calculadora.calcular()">Evaluar</button>
+	<p></p>
+	<input type="text" id="resultado" disabled />
+	<p>Nota: el precio del agua juntando suministro y saneamiento es de 0.86€/m3</p>	
+	<footer>
+	<a href="http://validator.w3.org/check/referer">
+		<img src="https://www.w3.org/Icons/valid-html40" alt="¡HTML5 válido!" height="31" width="88" /></a>
+	<a href="http://jigsaw.w3.org/css-validator/check/referer">
+		<img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="¡CSS Válido!" /></a>
+	</footer>
+</body>
+</html>
