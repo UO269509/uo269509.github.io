@@ -13,8 +13,10 @@
 <body onload="geo.initMap(document.getElementById('latitud').value, document.getElementById('longitud').value)">
     <h1>Búsqueda de Coordenadas</h1>
     <h2>Elige una latitud y longitud</h2>
-    <input type="text" value="" id="latitud"/>
-    <input type="text" value="" id="longitud"/>
+    <p><label for="latitud">Introduzca una latitud</label>
+    <input type="text" value="" id="latitud"/></p>
+    <p><label for="longitud">Introduzca una longitud</label>
+    <input type="text" value="" id="longitud"/></p>
     <button class="button" onclick="geo.initMap(document.getElementById('latitud').value, document.getElementById('longitud').value)">Mostrar</button>
     <div id="mapa"></div>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6j4mF6blrc4kZ54S6vYZ2_FpMY9VzyRU">
