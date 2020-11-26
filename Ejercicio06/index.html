@@ -12,15 +12,15 @@
 </head>
 <body>
     <h1>Calculadora del Consumo del Agua</h1>
-	<p>Introduzca su gasto promedio de litros al día</p>
+	<label for="litros">Introduzca su gasto promedio de litros al día</label>
 	<input type="text" value="0" id="litros" />
-	<p>Introduzca el número de individuos en la vivienda</p>
+	<label for="individuos">Introduzca el número de individuos en la vivienda</label>
 	<input type="text" value="0" id="individuos" />
-	<p>Introduzca el porcentaje de pérdida</p>
+	<label for="porcentaje">Introduzca el porcentaje de pérdida</label>
 	<input type="text" value="0" id="porcentaje" />
 	<p></p>
 	<button class="button" onclick="calculadora.calcular()">Evaluar</button>
-	<p></p>
+	<label for="resultado">SU consumo es:</label>
 	<input type="text" id="resultado" disabled />
 	<p>Nota: el precio del agua juntando suministro y saneamiento es de 0.86€/m3</p>	
 	<footer>
