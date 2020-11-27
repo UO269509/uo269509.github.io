@@ -13,10 +13,8 @@
 </head>
 <body>
     <h1>Imágenes obtenidas de <a href='https://www.flickr.com/'>Flickr</a></h1>
-    <p>Buscar etiqueta</p>
-    <input type="text" value="All" id="etiqueta"/>
-    <p>Número de imágenes</p>
-    <input type="text" value="1" id="number"/>
+    <p><label for="etiqueta">Buscar etiqueta<input type="text" value="All" id="etiqueta"/></label></p>
+    <p><label for="number">Número de imágenes<input type="text" value="1" id="number"/></label></p>
     <button class="button" onclick="imagenes.verImagenes()">Generar</button>
     <div id="imagenes"></div>
     <footer>
