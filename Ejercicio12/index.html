@@ -13,7 +13,9 @@
 </head>
 <body>
     <h1>Seleccione varios archivos</h1>
-    <p><input id="subirArchivos" type="file" name="Archivos" onchange="misArchivos.calcularTamañoArchivos();" multiple></p>
+    <p>
+		<label for="subirArchivos">Seleccione:<input id="subirArchivos" type="file" name="Archivos" onchange="misArchivos.calcularTamañoArchivos();" multiple></label>
+	</p>
     <p>Archivos seleccionados: <span id="numero">0</span></p>
     <p>Tamaño total: <span id="tamaño">0</span></p>
     <span id="nombres"></span>
