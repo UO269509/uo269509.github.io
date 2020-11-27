@@ -45,29 +45,35 @@
 			</tr>
 		</table>
 	</section>
-		<p></p>	
-		<input type="text" id="mostrar"/>
-		<button class="button" onclick="archivo.mostrar()">Mostrar</button>
-		<p></p>	
-		<input type="text" id="ocultar"/>
-		<button class="button" onclick="archivo.ocultar()">Ocultar</button>
-		<p></p>	
-		<input type="text" value = "h1" id="cambiar_elemento"/>
-		<input type="text" id="cambiar_texto"/>
-		<button class="button" onclick="archivo.cambiar()">Cambiar</button>
-		<p></p>	
-		<input type="text" value = "h3" id="nuevo_elemento"/>
-		<input type="text" value = "p" id="lugar_elemento"/>
-		<button class="button" onclick="archivo.crearElemento()">Mostrar Delante</button>
-		<p></p>	
-		<input type="text" id="borrar"/>
-		<button class="button" onclick="archivo.eliminar()">Eliminar</button>
-		<p></p>	
-		<button class="button" onclick="archivo.recorrer()">Recorrer</button>
-		<p></p>	
-		<button class="button" onclick="archivo.sumarTabla()">Sumar</button>
-		<input type="text" id="sumar" disabled/>
-		<p></p>	
+		<p>
+			<label for="mostrar">Muestra un elemento:<input type="text" id="mostrar"/></label>	
+			<button class="button" onclick="archivo.mostrar()">Mostrar</button>
+		</p>
+		<p>
+			<label for="ocultar">Oculta un elemento:<input type="text" id="ocultar"/></label>	
+			<button class="button" onclick="archivo.ocultar()">Ocultar</button>
+		</p>
+		<p>
+			<label for="cambiar_elemento">Elige un elemento:<input type="text" value = "h1" id="cambiar_elemento"/></label>
+			<label for="cambiar_texto">Edita el texto:<input type="text" id="cambiar_texto"/></label>
+			<button class="button" onclick="archivo.cambiar()">Cambiar</button>
+		</p>	
+		<p>
+			<label for="nuevo_elemento">Elige un nuevo elemento:<input type="text" value = "h3" id="nuevo_elemento"/></label>
+			<label for="lugar_elemento">Elige un elemento posterior:<input type="text" value = "p" id="lugar_elemento"/></label>
+			<button class="button" onclick="archivo.crearElemento()">Mostrar Delante</button>
+		</p>	
+		<p>	
+			<label for="borrar">Borra un elemento:<input type="text" id="borrar"/></label>
+			<button class="button" onclick="archivo.eliminar()">Eliminar</button>
+		</p>
+		<p>	
+			<button class="button" onclick="archivo.recorrer()">Recorrer</button>
+		</p>
+		<p>
+			<button class="button" onclick="archivo.sumarTabla()">Sumar</button>
+			<label for="sumar">Resultado:<input type="text" id="sumar" disabled/></label>
+		</p>			
 	<footer>
 	<a href="http://validator.w3.org/check/referer">
     <img src="https://www.w3.org/Icons/valid-html40" alt="¡HTML5 válido!" height="31" width="88" /></a>
