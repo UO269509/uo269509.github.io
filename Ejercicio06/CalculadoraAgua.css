@@ -1,0 +1,29 @@
+h1{
+    font-family: Garamond, sans-serif;
+    color: black;
+    text-align: left;
+    font-size: 2.0em;
+}
+
+body {
+    background-color: ivory;
+}
+
+button {
+    font-size: larger;
+    padding: 3px;
+    width: 80px;
+    border-radius: 15px;
+}
+
+input {
+	text-align: right;
+}
+
+button:hover {
+    color: white;
+}
+
+button.button {
+    background-color: green;
+}
