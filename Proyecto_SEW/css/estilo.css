@@ -124,7 +124,7 @@ video {
 
 /* a=0 b=1 c=0 -> Especificidad = 010 */
 .link-company {
-    color: orange;
+    color: white;
     background-color: none;
 }
 
