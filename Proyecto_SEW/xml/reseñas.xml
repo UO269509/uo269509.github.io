@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rutas SYSTEM "reseñas.dtd">
+<reseñas xmlns="http://www.uniovi.es" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.uniovi.es reseñas.xsd">
+    <reseña nombre="Viaje a Hawai">
+        <nombre_apellido>Francisco Fernández</nombre_apellido>
+        <correo>ejemplo1@uniovi.es</correo>
+        <procedencia>España</procedencia>
+        <nombre_hotel>Aston Waikiki Beach Tower</nombre_hotel>
+        <puntuacion_hotel>5</puntuacion_hotel>
+        <texto>
+            Me ha encantado el hotel pero demasiado caro.
+        </texto>
+        <lugares>
+            <lugar nombre="Honolulu">
+                <texto_lugar>
+                    Excelentes vistas, recomiendo venir a visitarlo.
+                </texto_lugar>
+                <puntuacion_lugar>9</puntuacion_lugar>
+                <foto>honolulu.jpg</foto>
+            </lugar>
+            <lugar nombre="Kapolei">
+                <texto_lugar>
+                    Excelentes vistas, recomiendo venir a visitarlo.
+                </texto_lugar>
+                <puntuacion_lugar>10</puntuacion_lugar>
+                <foto>kapolei.jpg</foto>
+            </lugar>
+        </lugares>
+    </reseña>
+    <reseña nombre="Viaje a España">
+        <nombre_apellido>Lucía Rodriguez</nombre_apellido>
+        <correo>ejemplo2@uniovi.es</correo>
+        <procedencia>Hawai</procedencia>
+        <nombre_hotel>Hotel Monumental Naranco</nombre_hotel>
+        <puntuacion_hotel>4</puntuacion_hotel>
+        <texto>
+            Bonito hotel, buen servicio y perfecto por calidad/precio.
+        </texto>
+        <lugares>
+            <lugar nombre="Oviedo">
+                <texto_lugar>
+                    Excelentes vistas, recomiendo venir a visitarlo.
+                </texto_lugar>
+                <puntuacion_lugar>7</puntuacion_lugar>
+                <foto>oviedo.jpg</foto>
+            </lugar>
+            <lugar nombre="Gijón">
+                <texto_lugar>
+                    Excelentes vistas, recomiendo venir a visitarlo.
+                </texto_lugar>
+                <puntuacion_lugar>5</puntuacion_lugar>
+                <foto>gijon.jpg</foto>
+            </lugar>
+        </lugares>
+    </reseña>
+</reseñas>
