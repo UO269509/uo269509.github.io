@@ -17,7 +17,8 @@ class Procesar {
                 for( var i = 1; i < reseñas.length + 1; i++)
                 {
                     var reseña = reseñas[i - 1];
-                    $("#viaje" + i).append(reseña.attributes[0].nodeValue);
+                    $(document.getElementById(i)).before("<h1>"+ reseña.attributes[0].nodeValue + "</h1>");
+                    //$("#viaje" + i).append(reseña.attributes[0].nodeValue);
                     $("#nombre" + i).append("Nombre: " + reseña.children[0].innerHTML);
                     $("#correo" + i).append("Correo: " + reseña.children[1].innerHTML);
                     $("#procedencia" + i).append("Procedencia: " + reseña.children[2].innerHTML);
