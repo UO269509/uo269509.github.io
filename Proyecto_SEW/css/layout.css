@@ -16,6 +16,7 @@ head {
 section {
     grid-area: section;
     margin: 8px;
+    text-align: center;
 }
 
 /* a=0 b=0 c=1 -> Especificidad = 001 */
