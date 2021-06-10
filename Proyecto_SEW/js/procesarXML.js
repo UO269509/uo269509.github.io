@@ -6,9 +6,9 @@ class Procesar {
         
     }
 
-    procesarDatos() {
+    procesarDatos(files) {
         if (window.File && window.FileReader && window.FileList && window.Blob) {
-            var file = document.getElementById("subirArchivos").files[0];
+            var file = files[0];
             var reader = new FileReader();
             reader.onload = function (e) {
                 var htmlText = "";
