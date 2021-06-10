@@ -40,7 +40,7 @@ class Procesar {
                     $("#reseñas").after(htmlText);
                 }
             };
-            xhttp.open("GET", "https://uo269509.github.io/Proyecto_SEW/html/resenas.xml", true);
+            xhttp.open("GET", "https://uo269509.github.io/Proyecto_SEW/xml/resenas.xml", true);
             xhttp.send();
         } else {
             document.write("<p>¡¡¡ Este navegador NO soporta el API File y este programa puede no funcionar correctamente !!!</p>");

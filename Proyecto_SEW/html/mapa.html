@@ -6,16 +6,19 @@
     <meta charset="utf-8">
     <meta name="application_name" content="World Review" />
     <meta name="author" content="Francisco Fernandez-UO269509 ">
-    <meta name="description" content="Página de lugares">
+    <meta name="description" content="Página de reseñas en tiempo real">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Lugares</title>
+    <title>Mapa</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6j4mF6blrc4kZ54S6vYZ2_FpMY9VzyRU"></script>
+    <script src="../js/accuweather.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/estilo.css" />
     <link rel="stylesheet" type="text/css" href="../css/layout.css">
 
 </head>
 
-<body>
+<body onload="meteo.initMap()">
     <header>
         <nav class="navbar">
             <ul class="nav-ul">
@@ -28,24 +31,11 @@
         </nav>
     </header>
     <section class="home">
-        <h1>Lugares donde viajar</h1>
-        <h2>Hawai</h2>
-        <p>Es un archipiélago, perteneciente a los Estados Unidos, que está ubicado
-            en el Pacífico Norte. Compuesto por 8 islas de origen volcánico, <br> es un paraíso
-            atrapante repleto de playas y palmeras, con un sinfín de atractivos turísticos.
-        </p>
-        <video controls>
-            <source src="../videos/hawai.mp4" type="video/mp4">
-                Video is not supported
-        </video>
-        <h2>España</h2>
-        <p>Cuenta con playas, parques acuáticos, volcanes, canchas de golf, museos, monumentos,cuevas, navegación, etc.<br>  
-            Todo esto convierte al turismo de España como uno de los más visitados y variados del mundo.
-        </p>
-        <video controls>
-            <source src="../videos/españa.mp4" type="video/mp4">
-                Video is not supported
-        </video>
+        <h1>Deja tu reseña</h1>
+        <label for="reseña">Introduzca su reseña</label>
+        <input type="text" value="" id="reseña"/>
+        <button class="button" onclick="meteo.initMap()">Enviar</button>
+        <div id="mapa"></div>
     </section>
     <footer>
         <a href="https://validator.w3.org/check?uri=referer">

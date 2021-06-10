@@ -19,8 +19,7 @@ class Meteo{
                 method: 'GET',
                 success: function(datos)
                         {
-                            var ciudad = datos[0];
-                            this.cargarDatos(ciudad.Key);
+                            meteo.cargarDatos(datos.Key);
                         },
                 error:function()
                     {
@@ -39,7 +38,11 @@ class Meteo{
                 success: function(datos)
                         {
                             var tiempo = datos[0];
-
+                            var link = tiempo.Link;
+                            var temperatura = tiempo.Temperature.Metric.Value;
+                            var text = tiempo.WeatherText;
+                            $("p").remove();
+                            $(".button").after("<p> Hace "+temperatura+"ºC - "+ text +" <a class='link' href='"+ link +"'> More info</a></p>");
                         },
                 error:function()
                     {
@@ -62,6 +65,44 @@ class Meteo{
             }
           }, false);
     }
+
+    initMap(){  
+        var infoWindow = new google.maps.InfoWindow;
+        var longitud;
+        var latitud;
+        if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(function(position) {
+                var pos = {lat: position.coords.latitude, lng: position.coords.longitude};
+                latitud = position.coords.latitude;
+                longitud = position.coords.longitude;
+                var mapaGeoposicionado = new google.maps.Map($('div')[0],{
+                    zoom: 8,
+                    center:pos,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                });
+                if(document.getElementById("reseña").value !== ''){
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent(document.getElementById("reseña").value);
+                    meteo.buscarCiudad(pos.lat, pos.lng)
+                }
+                infoWindow.open(mapaGeoposicionado);
+                mapaGeoposicionado.setCenter(pos);
+                return pos;
+              }, function() {
+                handleLocationError(true, infoWindow, mapaGeoposicionado.getCenter());
+              });
+        } else {
+          handleLocationError(false, infoWindow, mapaGeoposicionado.getCenter());
+        }
+    }
+
+    handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: Ha fallado la geolocalización' :
+                              'Error: Su navegador no soporta geolocalización');
+        infoWindow.open(mapaGeoposicionado);
+      }
 }
 
 var meteo = new Meteo();
