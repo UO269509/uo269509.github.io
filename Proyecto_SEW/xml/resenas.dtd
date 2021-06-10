@@ -1,0 +1,15 @@
+<!ELEMENT reseñas (reseña+)>
+<!ELEMENT reseña (nombre_apellido, correo, procedencia?, nombre_hotel, puntuacion_hotel, texto, lugares)>
+    <!ATTLIST reseña nombre CDATA #REQUIRED>
+    <!ELEMENT nombre_apellido (#PCDATA)>
+    <!ELEMENT correo (#PCDATA)>
+    <!ELEMENT procedencia (#PCDATA)>
+    <!ELEMENT nombre_hotel (#PCDATA)>
+    <!ELEMENT puntuacion_hotel (#PCDATA)>
+    <!ELEMENT texto (#PCDATA)>
+    <!ELEMENT lugares (lugar, lugar+)>
+        <!ELEMENT lugar (texto_lugar, puntuacion_lugar, foto?)>
+        <!ATTLIST lugar nombre CDATA #REQUIRED>
+        <!ELEMENT texto_lugar (#PCDATA)>
+        <!ELEMENT puntuacion_lugar (#PCDATA)>
+        <!ELEMENT foto (#PCDATA)>

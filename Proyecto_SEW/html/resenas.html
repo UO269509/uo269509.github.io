@@ -28,9 +28,8 @@
             </ul>
         </nav>
     </header>
-    <section class="home">
-        <h1>Reseñas</h1>
-        <label for="subirArchivos" id="inputFile">Cargar reseñas: <input id="subirArchivos" type="file" accept="text/xml" onchange="procesar.procesarDatos(this.files)"></label>
+    <section class="home" onload="procesar.procesarDatos()">
+        <h1 id="reseñas">Reseñas</h1>
     </section>
     <footer>
         <a href="https://validator.w3.org/check?uri=referer">
