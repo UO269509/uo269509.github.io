@@ -17,7 +17,7 @@ class Procesar {
                     var counter = 0;
                     for (var i = 1; i < reseñas.length + 1; i++) {
                         var reseña = reseñas[i - 1];
-                        htmlText += "<h1>" + reseña.attributes[0].nodeValue + "</h1>";
+                        htmlText += "<h2>" + reseña.attributes[0].nodeValue + "</h2>";
                         htmlText += "<ul>";
                         htmlText += "<li>" + "Nombre: " + reseña.children[0].innerHTML + "</li>";
                         htmlText += "<li>" + "Correo: " + reseña.children[1].innerHTML + "</li>";
