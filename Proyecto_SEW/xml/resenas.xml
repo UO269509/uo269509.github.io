@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE rutas SYSTEM "resenas.dtd">
 <reseñas xmlns="http://www.uniovi.es" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.uniovi.es resenas.xsd">
     <reseña nombre="Viaje a Hawai">
         <nombre_apellido>Francisco Fernández</nombre_apellido>

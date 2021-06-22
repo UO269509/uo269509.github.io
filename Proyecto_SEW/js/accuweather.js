@@ -5,8 +5,8 @@ class Meteo{
     constructor(){
         this.pantallaCompleta();
         this.api_key = 'QFKtbIN6HTQrtH9Gr0q3elidi9lREsES';
-        this.base_city = 'http://dataservice.accuweather.com/locations/v1/cities/geoposition/search';
-        this.base_weather = 'http://dataservice.accuweather.com/currentconditions/v1/';
+        this.base_city = 'https://dataservice.accuweather.com/locations/v1/cities/geoposition/search';
+        this.base_weather = 'https://dataservice.accuweather.com/currentconditions/v1/';
         this.query = '?apikey=';
         this.andOperator = '&q=';
     }
