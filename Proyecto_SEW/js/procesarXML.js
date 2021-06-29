@@ -32,7 +32,7 @@ class Procesar {
                             htmlText += "<li class='lugares'>" + lugar.attributes[0].nodeValue + "</li>";
                             htmlText += "<li>" + "Reseña: " + lugar.children[0].innerHTML + "</li>";
                             htmlText += "<li>" + "Puntuación: " + lugar.children[1].innerHTML + "</li>";
-                            var imagen = "<img src='../images/" + lugar.children[2].innerHTML + "' alt='Imagen del paisaje' height='205' width='512' />";
+                            var imagen = "<img src='https://uo269509.github.io/Proyecto_SEW/images/" + lugar.children[2].innerHTML + "' alt='Imagen del paisaje' height='205' width='512' />";
                             htmlText += "<li>" + imagen + "</li>";
                         }
                         htmlText += "</ul>";
