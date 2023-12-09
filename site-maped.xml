@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitio_web>
+    <pagina id="inicio" url="index.html">
+        <titulo>Mi Sitio Personal</titulo>
+        <contenido>
+            <p>¡Hola! Soy Francisco Manuel Fernández Suárez, y esta es mi página personal. Aquí encontrarás información sobre mí, como por ejemplo algunas aficiones, al igual que música y últimas series que he visto.</p>
+            <p>Tengo más de un año de experiencia en el sector informático. Trabajé en DYNHUB.SL durante un año, donde realicé mis prácticas extracurriculares y hace poco me cambié a Babel donde llevo más de un mes.</p>
+            <p>Me gradué en la Universidad de Oviedo con un título en Ingeniería Informática del Software el año 2023 y ahora me encuentro cursando el máster en Ingeniería Web.</p>
+        </contenido>
+    </pagina>
+    <pagina id="aficiones" url="aficiones.html">
+        <titulo>Aficiones</titulo>
+        <contenido>
+            <p>Gimnasio: descubro una disciplina que va más allá de la simple actividad física; es un compromiso con el automejoramiento y la salud. Levantar pesas se convierte en un viaje personal de fortaleza, resistencia y superación. Cada repetición no solo es un desafío físico, sino también una oportunidad de crecimiento mental.</p>
+            <p>Fútbol: conocido como el deporte rey, se ha convertido en más que una simple actividad para mí; es una pasión que impulsa mi energía y despierta mi espíritu competitivo. Desde el momento en que el balón toca la cancha, experimento una mezcla de emoción y determinación. La estrategia, la coordinación y el trabajo en equipo son elementos clave que me fascinan del juego. Ya sea animando a mi equipo favorito en el estadio o participando activamente en partidos con amigos, el fútbol es una fuente inagotable de alegría.</p>
+        </contenido>
+    </pagina>
+    <pagina id="musica" url="musica.html">
+        <titulo>Música</titulo>
+        <contenido>
+            <p>Artista: Leiva - Canción: Diazepam - Género: Pop - Álbum: Cuando te muerdes el labio - Año: 2021</p>
+            <p>Artista: Bad Bunny - Canción: Me porto bonito - Género: Reguetón - Álbum: Un verano sin ti - Año: 2022</p>
+            <p>Artista: Quevedo - Canción: Playa del Inglés - Género: Reguetón - Álbum: Donde quiero estar - Año: 2022</p>
+            <p>Artista: Eladio Carrión - Canción: Si la calle llama - Género: Trap - Álbum: 3MN2 KBRN - Año: 2023</p>
+        </contenido>
+    </pagina>
+    <pagina id="series" url="series.html">
+        <titulo>Series</titulo>
+        <contenido>
+            <p>"Baki" es una serie de anime y manga japonés que sigue la historia de Baki Hanma, un joven luchador que busca mejorar sus habilidades en artes marciales. La trama se centra en Baki enfrentándose a los luchadores más fuertes del mundo, incluyendo a su propio padre, el legendario Yujiro Hanma. A medida que Baki se enfrenta a desafíos cada vez más intensos, la serie explora temas de fuerza, superación personal y rivalidad en el mundo de las artes marciales.</p>
+            <p>"La Casa de Papel" es una serie de televisión española que sigue a un grupo de criminales liderados por un personaje conocido como "El Profesor". Su plan es llevar a cabo el atraco perfecto a la Fábrica Nacional de Moneda y Timbre de España, donde planean imprimir billones de euros y escapar sin ser capturados. A lo largo de la serie, se desarrollan complejas relaciones entre los miembros del equipo y surgen giros inesperados en la trama. La serie combina elementos de thriller, acción y drama, explorando temas de lealtad, amor y resistencia.</p>
+        </contenido>
+    </pagina>
+</sitio_web>
