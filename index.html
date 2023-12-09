@@ -7,29 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/layout.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <script src="buscador.js"></script>
     <title>Mi Sitio Personal</title>
-
-<!-- Hotjar Tracking Code for Web movil -->
-<script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:3784335,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
 </head>
 <body>
     <header>
         <h1>Mi Sitio Personal</h1>
     </header>
     <nav>
-            <a href="index.html" target="_self">Inicio</a>
-            <a href="aficiones.html" target="_self">Aficiones</a>
-            <a href="musica.html" target="_self">Música</a>
-            <a href="series.html" target="_self">Series</a>
+            <a href="index.html" target="_self"><i class="fas fa-home"></i> Inicio</a>
+            <a href="aficiones.html" target="_self"><i class="fas fa-heart"></i> Aficiones</a>
+            <a href="musica.html" target="_self"><i class="fas fa-music"></i> Música</a>
+            <a href="series.html" target="_self"><i class="fas fa-tv"></i> Series</a>
+
+            <!-- Campo de búsqueda -->
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar...">
+                <ul id="searchResults"></ul>
+            </div>
     </nav>
     <main>
         <img src="img/foto.jpg" alt="Foto de Francisco Manuel Fernández Suárez">
