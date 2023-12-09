@@ -13,7 +13,7 @@ nav {
 
 main {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 5px;
     align-items: center;
 }
