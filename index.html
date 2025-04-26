@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación de Boda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    // Disparo automático al cargar
+    window.onload = () => {
+        confetti({
+          particleCount: 150,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+      };
+  </script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #f8f5f2;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 5rem 1rem;
+      background: #fff8f0;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    section {
+      max-width: 700px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+    .details {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .details h2 {
+      font-family: 'Playfair Display', serif;
+      margin-top: 0;
+      text-align: center;
+    }
+    .details ul {
+  padding-left: 12.5rem; /* Mueve viñetas y texto juntos */
+  list-style-position: outside; /* Asegura que las viñetas estén fuera del bloque de texto */
+  text-align: left;
+    }
+    .btn-map {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #d9a36a;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn-map:hover {
+      background: #c98f53;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Fran & Fani</h1>
+    <p>Nos casamos</p>
+  </header>
+
+  <section>
+    <div class="details">
+      <h2>Nuestra historia</h2>
+      <p>Aquí puedes escribir un texto bonito, cómo se conocieron, alguna anécdota divertida o simplemente agradecer a los invitados por acompañarlos.</p>
+
+      <h2>Detalles del evento</h2>
+      <ul>
+        <li><strong>Fecha:</strong> 28/05/2025</li>
+        <li><strong>Hora:</strong> 12:00</li>
+        <li><strong>Lugar:</strong> Paniste Hotel Boutique</li>
+        <li><strong>Dress code:</strong> Formal / Casual</li>
+      </ul>
+
+      <a class="btn-map" href="https://maps.app.goo.gl/YuL6ZEzdXyWrMwKQ7" target="_blank">Ver ubicación en Google Maps</a>
+    </div>
+  </section>
+
+  <footer>
+    Con amor, Fran & Fani ♥
+  </footer>
+</body>
+</html>
