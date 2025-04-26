@@ -20,37 +20,16 @@
       });
     }
 
-    function crearCorazonFlotante() {
-      const corazon = document.createElement('div');
-      corazon.classList.add('corazon-flotante');
-
-      const colores = ['#ffb6c1', '#ffc0cb', '#87ceeb', '#add8e6', '#e6b0aa', '#d1c4e9'];
-      const colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
-      corazon.style.background = colorAleatorio;
-      corazon.style.left = Math.random() * window.innerWidth + 'px';
-      corazon.style.top = Math.random() * window.innerHeight + 'px';
-      document.body.appendChild(corazon);
-
-      setTimeout(() => {
-        corazon.remove();
-      }, 3000);
-    }
-
-    // Función para iniciar la música y abrir la carta
     function iniciarMusica() {
       const audio = document.getElementById('audio-fondo');
       audio.play();
-
-      // Iniciar confeti y corazones flotantes
       crearConfeti();
       setInterval(crearConfeti, 5000);
-      setInterval(crearCorazonFlotante, 1500);
-
-      document.getElementById('carta').classList.add('open'); // Agregar animación de apertura
+      document.getElementById('carta').classList.add('open');
       setTimeout(() => {
-        document.getElementById('carta').style.display = 'none'; // Ocultar la carta
-        document.getElementById('contenido').style.display = 'block'; // Mostrar el contenido
-      }, 800); // Esperar que termine la animación antes de mostrar el contenido
+        document.getElementById('carta').style.display = 'none';
+        document.getElementById('contenido').style.display = 'block';
+      }, 800);
     }
   </script>
   <style>
@@ -59,7 +38,7 @@
       font-family: 'Open Sans', sans-serif;
       background: #f8f5f2;
       color: #333;
-      line-height: 1.6;
+      line-height: 1.2;
       background: url('flores.jpg') no-repeat center center fixed;
       background-size: cover;
       overflow-x: hidden;
@@ -78,12 +57,14 @@
     }
     .details h1 {
       font-family: 'Alex Brush', cursive;
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+      font-size: 2rem;
     }
     .details h2 {
       font-family: 'Alex Brush', cursive;
-      margin-top: 0;
+      text-align: center;
+    }
+    .details h3 {
+      font-family: 'Alex Brush', cursive;
       text-align: center;
     }
     .details ul {
@@ -103,48 +84,6 @@
     .btn-map:hover {
       background: #c98f53;
     }
-    .corazon-flotante {
-      position: fixed;
-      width: 30px;
-      height: 30px;
-      background: pink;
-      transform: rotate(45deg);
-      animation: flotar 4s ease-out forwards, brillar 1.5s infinite alternate;
-      z-index: 10;
-      pointer-events: none;
-    }
-    .corazon-flotante::before,
-    .corazon-flotante::after {
-      content: "";
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      background: pink;
-      border-radius: 50%;
-    }
-    .corazon-flotante::before {
-      top: -15px;
-      left: 0;
-    }
-    .corazon-flotante::after {
-      left: -15px;
-      top: 0;
-    }
-    @keyframes flotar {
-      to {
-        transform: translateY(-300px) rotate(45deg);
-        opacity: 0;
-      }
-    }
-    @keyframes brillar {
-      from {
-        opacity: 1;
-      }
-      to {
-        opacity: 0.6;
-      }
-    }
-    /* Estilos de la carta */
     .carta {
       width: 300px;
       height: 400px;
@@ -167,15 +106,12 @@
       font-size: 1.2rem;
       transition: transform 1s ease-in-out;
     }
-
     .carta.open {
-      transform: translate(-50%, -50%) rotateY(180deg); /* Efecto de giro 3D */
+      transform: translate(-50%, -50%) rotateY(180deg);
     }
-
     .carta h1 {
       font-size: 1.5rem;
     }
-
     .contenido {
       display: none;
     }
@@ -200,9 +136,9 @@
   <div id="contenido" class="contenido">
     <section>
       <div class="details">
-        <h1>Francisco & Priscila</h1>
+        <h1>Fran & Fani</h1>
         <h2>¡Estás invitado a nuestra boda!</h2>
-        <h2>Detalles del evento</h2>
+        <h3>Detalles del evento</h3>
         <ul>
           <li><strong>28/05/2025 12:00 AM</strong></li>
           <li><strong>Paniste Hotel Boutique</strong></li>
