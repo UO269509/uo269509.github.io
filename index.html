@@ -12,19 +12,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script>
-    function crearConfeti() {
-      confetti({
-        particleCount: 150,
-        spread: 70,
-        origin: { y: 0.6 }
-      });
+    function crearPetalo() {
+      const petalo = document.createElement('div');
+      petalo.classList.add('petalo');
+
+      petalo.style.left = Math.random() * 100 + 'vw';
+      petalo.style.animationDuration = (3 + Math.random() * 2) + 's'; // Velocidades diferentes
+
+      document.body.appendChild(petalo);
+
+      setTimeout(() => {
+        petalo.remove();
+      }, 5000);
     }
 
     function iniciarMusica() {
       const audio = document.getElementById('audio-fondo');
       audio.play();
-      crearConfeti();
-      setInterval(crearConfeti, 5000);
+      setInterval(crearPetalo, 300);
       document.getElementById('carta').classList.add('open');
       setTimeout(() => {
         document.getElementById('carta').style.display = 'none';
@@ -39,7 +44,7 @@
       background: #f8f5f2;
       color: #333;
       line-height: 1.2;
-      background: url('flores.jpg') no-repeat center center fixed;
+      background: url('fondo.jpg') no-repeat center center fixed;
       background-size: cover;
       overflow-x: hidden;
     }
@@ -51,8 +56,7 @@
     .details {
       background: #ffffff;
       border-radius: 12px;
-      padding: 2rem;
-      margin-top: 3rem;
+      padding: 3rem;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       text-align: center;
     }
@@ -116,6 +120,24 @@
     .contenido {
       display: none;
     }
+    .petalo {
+      position: fixed;
+      top: -20px;
+      width: 20px;
+      height: 20px;
+      background: skyblue;
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(90deg);
+      opacity: 0.7;
+      animation: caer linear infinite;
+      pointer-events: none;
+      z-index: 5;
+    }
+    @keyframes caer {
+      to {
+        transform: translateY(100vh) rotate(90deg);
+      }
+    }
   </style>
 
 </head>
@@ -141,7 +163,7 @@
         <h2>¡Estás invitado a nuestra boda!</h2>
         <h3>Detalles del evento</h3>
         <ul>
-          <li><strong>28/05/2025 12:00 AM</strong></li>
+          <li><strong>28/05/2025 12:00 PM</strong></li>
           <li><strong>Paniste Hotel Boutique</strong></li>
           <li><strong>Dress code: Formal / Casual</strong></li>
         </ul>
