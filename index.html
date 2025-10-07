@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ruleta Europea con Predicción</title>
+<title>Ruleta Europea Circular con Predicción</title>
 <style>
 body {
     font-family: Arial, sans-serif;
@@ -17,6 +17,7 @@ body {
 
 h1 {
     margin-bottom: 10px;
+    text-align: center;
 }
 
 #input-section {
@@ -24,7 +25,7 @@ h1 {
 }
 
 #history-input {
-    width: 250px;
+    width: 200px;
     padding: 5px;
     font-size: 16px;
 }
@@ -35,14 +36,18 @@ h1 {
     margin-left: 5px;
 }
 
-#roulette {
-    display: grid;
-    grid-template-columns: repeat(6, 50px);
-    grid-gap: 5px;
+#roulette-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
     margin-bottom: 20px;
+    border: 5px solid #fff;
+    background: #111;
 }
 
 .number-cell {
+    position: absolute;
     width: 50px;
     height: 50px;
     display: flex;
@@ -51,108 +56,120 @@ h1 {
     align-items: center;
     border-radius: 50%;
     font-weight: bold;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.3s;
     cursor: default;
-    transition: transform 0.2s;
 }
 
-.number-cell:hover {
-    transform: scale(1.1);
-}
+.number-cell.red { background-color: #e74c3c; }
+.number-cell.black { background-color: #34495e; }
+.number-cell.green { background-color: #27ae60; }
 
-.red {
-    background-color: #e74c3c;
-}
-
-.black {
-    background-color: #34495e;
-}
-
-.green {
-    background-color: #27ae60;
+.number-cell.highlight {
+    box-shadow: 0 0 15px 5px #f1c40f;
 }
 
 #prediction {
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 18px;
-}
-
-#prediction span {
-    font-weight: bold;
+    text-align: center;
 }
 </style>
 </head>
 <body>
 
-<h1>Ruleta Europea con Predicción</h1>
+<h1>Ruleta Europea Circular con Predicción</h1>
 
 <div id="input-section">
     <input type="number" id="history-input" min="0" max="36" placeholder="Número salido">
     <button id="add-number">Añadir</button>
 </div>
 
-<div id="roulette"></div>
+<div id="roulette-container"></div>
 
 <div id="prediction">
     <p>Los 5 números más probables: <span id="top5">-</span></p>
 </div>
 
 <script>
+const europeanOrder = [0,32,15,19,4,21,2,25,17,34,6,27,13,36,11,30,8,23,10,5,
+                        24,16,33,1,20,14,31,9,22,18,29,7,28,12,35,3,26]; // orden físico
 const redNumbers = [1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36];
 const blackNumbers = [2,4,6,8,10,11,13,15,17,20,22,24,26,28,29,31,33,35];
 let history = [];
 
-// Crea las celdas de la ruleta
+const radius = 200;
+const centerX = 250;
+const centerY = 250;
+
+// Crear celdas en orden físico
 function createRoulette() {
-    const roulette = document.getElementById('roulette');
-    roulette.innerHTML = '';
-    for(let i=0; i<=36; i++){
+    const container = document.getElementById('roulette-container');
+    container.innerHTML = '';
+    for(let idx=0; idx<europeanOrder.length; idx++){
+        const n = europeanOrder[idx];
         const cell = document.createElement('div');
         cell.classList.add('number-cell');
-        if(i === 0) cell.classList.add('green');
-        else if(redNumbers.includes(i)) cell.classList.add('red');
+        if(n===0) cell.classList.add('green');
+        else if(redNumbers.includes(n)) cell.classList.add('red');
         else cell.classList.add('black');
-        cell.id = 'cell-' + i;
-        cell.innerHTML = `${i}<br><small>0%</small>`;
-        roulette.appendChild(cell);
+        cell.id = 'cell-' + n;
+        cell.innerHTML = `${n}<br><small>0%</small>`;
+        // posición circular
+        const angle = (idx / europeanOrder.length) * 2 * Math.PI - Math.PI/2; // ajustar inicio arriba
+        const x = centerX + radius * Math.cos(angle);
+        const y = centerY + radius * Math.sin(angle);
+        cell.style.left = `${x}px`;
+        cell.style.top = `${y}px`;
+        cell.style.transform = 'translate(-50%, -50%)';
+        container.appendChild(cell);
     }
 }
 
-// Actualiza los porcentajes y predicción
+// Calcular frecuencias y predicción
 function updateRoulette() {
     const counts = Array(37).fill(0);
     for(let n of history) counts[n]++;
     const N = history.length;
 
-    // Actualiza visual de cada celda
-    for(let i=0; i<=36; i++){
+    // actualizar porcentajes
+    for(let i=0;i<=36;i++){
         const percent = N>0 ? ((counts[i]/N)*100).toFixed(1) : 0;
         const cell = document.getElementById('cell-' + i);
         cell.innerHTML = `${i}<br><small>${percent}%</small>`;
+        cell.classList.remove('highlight');
     }
 
-    // Calcula predicción
-    const bayesProbs = computeBayes(counts, 1);
+    // predicción bayesiana
+    const bayesProbs = computeBayes(counts,1);
     const markovProbs = computeMarkov();
     const ensemble = bayesProbs.map((b,i) => 0.8*b + 0.2*markovProbs[i]);
-    const top5Indices = ensemble
-        .map((p,i) => ({p,i}))
-        .sort((a,b) => b.p - a.p)
+
+    // Top 5 números
+    const top5Indices = ensemble.map((p,i)=>({p,i}))
+        .sort((a,b)=>b.p-a.p)
         .slice(0,5)
-        .map(x => x.i);
+        .map(x=>x.i);
     document.getElementById('top5').textContent = top5Indices.join(', ');
+
+    // resaltar top 5
+    for(let n of top5Indices){
+        const cell = document.getElementById('cell-'+n);
+        cell.classList.add('highlight');
+    }
 }
 
 // Dirichlet posterior (Bayes)
 function computeBayes(counts, alpha0=1){
     const K = counts.length;
     const N = counts.reduce((a,b)=>a+b,0);
-    return counts.map(c => (c + alpha0) / (N + K*alpha0));
+    return counts.map(c => (c + alpha0)/(N + K*alpha0));
 }
 
-// Matriz de transición simple (Markov orden 1)
+// Transición Markov orden 1
 function computeMarkov(){
     const probs = Array(37).fill(0);
-    if(history.length < 2) return probs;
+    if(history.length<2) return probs;
     const transitionCounts = Array.from({length:37},()=>Array(37).fill(0));
     for(let i=1;i<history.length;i++){
         const prev = history[i-1];
@@ -161,20 +178,20 @@ function computeMarkov(){
     }
     const last = history[history.length-1];
     const total = transitionCounts[last].reduce((a,b)=>a+b,0);
-    if(total === 0) return probs;
+    if(total===0) return probs;
     for(let i=0;i<37;i++){
-        probs[i] = transitionCounts[last][i]/total;
+        probs[i]=transitionCounts[last][i]/total;
     }
     return probs;
 }
 
-// Añade número al historial
+// Añadir número
 document.getElementById('add-number').addEventListener('click',()=>{
     const input = document.getElementById('history-input');
-    let n = parseInt(input.value);
+    const n = parseInt(input.value);
     if(!isNaN(n) && n>=0 && n<=36){
         history.push(n);
-        input.value = '';
+        input.value='';
         updateRoulette();
     } else {
         alert('Introduce un número válido entre 0 y 36');
